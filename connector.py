@@ -4,7 +4,7 @@ connection = conn.connect(user='root', password='', host='127.0.0.1', database='
 
 cursor = connection.cursor()
 
-query = "SELECT * from movies "
+query = "SELECT user_name,password_md5 from user"
 
 cursor.execute(query)
 
