@@ -4,7 +4,48 @@
 {% endblock %}
 
 {%block body%}
-<h1>Hello {{user}}</h1>
+<h1>{{user.user_name}}'s Recommendation</h1>
+
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Movie_Id</th>
+        <th scope="col">Movie_Name</th>
+        <th scope="col">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    {% for predict in predictions %}
+        <td>{{predict[0]}}</td>
+        <td>{{predict[1]}}</td>
+        <td>{{predict[2]}}</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+</table>
+
+<h1>{{user.user_name}}'s Ratings</h1>
+
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Movie_Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    {% for rate in rates %}
+        <td>{{rate[0]}}</td>
+        <td>{{rate[2]}}</td>
+        <td>{{rate[1]}}</td>
+    </tr>
+    {%endfor%}
+    </tbody>
+
+</table>
 
 
 {% endblock %}
