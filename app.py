@@ -42,7 +42,7 @@ for i in rating.values.tolist():
 
 # Create a pivot table with index as userId, columns as movieId, values as rating
 # This is user-item matrix btw
-rating_pivot = rating.pivot(index='userId', columns='movieId', \
+rating_pivot = rating.pivot(index='userId', columns='movieId',
                             values='rating').fillna(0)
 
 # Convert the pivot table into a sparse matrix
